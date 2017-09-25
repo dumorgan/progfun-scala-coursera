@@ -1,0 +1,21 @@
+compile
+test
+run
+submit dudusantoro@poli.ufrj.br  def countChange(money: Int, coins: List[Int]): Int = {
+    def splitList(money: Int, coins: List[Int], changes: Int): Int = {
+      if (money == 0) return changes
+      if (coins.isEmpty) return changes
+      if (money % coins.head == 0) {
+        splitList(coins.head, coins.tail, changes + 1) + splitList(money, coins.tail, changes)
+      }
+      else {
+        splitList(money / coins.head, coins.tail, changes)
+      }
+    }
+    splitList(money, coins, 0)
+submit dudusantoro@poli.ufrj.br o9JklqB8i5FZluYl
+compile
+test
+run
+submit dudusantoro@poli.ufrj.br o9JklqB8i5FZluYl
+submit dudusantoro@poli.ufrj.br bIrsPBq5BuxBwctN
